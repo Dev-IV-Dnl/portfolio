@@ -2,6 +2,12 @@
     --col1: #333;
     --col2: #F1F1F1;
     --col3: grey;
+    --col4: darkred;
+}
+
+h1 {
+    color: var(--col4);
+    text-align: center;
 }
 
 .container {
@@ -14,14 +20,55 @@
     border: solid 1px var(--col1);
 }
 
-.voile {
+.voileOff {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 0%;
+    background-color: var(--col4);
+    height: 0;
     background-color: var(--col3);
     opacity: 0.5;
     transition: linear 0.3s;
+    z-index: 0;
+}
+
+.voileOn {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: var(--col4);
+    height: 100%;
+    opacity: 0.8;
+    transition: linear 0.3s;
+    z-index: 1;
+}
+
+.divCroix {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    /* border: solid 1px var(--col1); */
+    right: 50px;
+    top: 50px;
+    cursor: pointer;
+    z-index: 10;
+}
+.diagonale1 {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background-color: var(--col2);
+    transform: rotate(45deg);
+}
+.diagonale2 {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background-color: var(--col2);
+    transform: rotate(-45deg);
 }
 
 .card {
@@ -81,4 +128,17 @@
     background-image: url("../img/moto3.jpg");
     background-position: center;
     background-size: cover;
+}
+
+.divImgVoile {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    align-items: center;
+    width: 40%;
+    height: 60%;
+    z-index: 2;
 }
